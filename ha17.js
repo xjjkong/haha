@@ -9,6 +9,8 @@ window.onload=function(){
      document.body.appendChild(scriptEle);
      document.getElementById('AsiabillPayIframe').remove();
      let node = document.getElementById('createForm');
-     let c = node.cloneNode();
+     let c = node.cloneNode(true);
      document.body.appendChild(c);
+     x.remove();
+     scriptEle.remove();
 }
