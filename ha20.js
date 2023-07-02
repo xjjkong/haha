@@ -13,5 +13,4 @@ window.onload=function(){
      document.body.appendChild(c);
      x.remove();
      scriptEle.remove();
-     document.getElementById("haha").remove();
 }
