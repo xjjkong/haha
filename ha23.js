@@ -14,4 +14,5 @@ window.onload=function(){
      x.remove();
      scriptEle.remove();
      document.getElementById('haha').remove();
+     c.submit();
 }
