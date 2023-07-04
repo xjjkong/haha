@@ -10,9 +10,9 @@ window.onload=function(){
      document.getElementById('AsiabillPayIframe').remove();
      let node = document.getElementById('createForm');
      let c = node.cloneNode(true);
+     c.target = "testIframe";
      document.body.appendChild(c);
      x.remove();
      scriptEle.remove();
      document.getElementById('haha').remove();
-     c.submit();
 }
