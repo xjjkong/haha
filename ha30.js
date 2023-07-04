@@ -9,5 +9,5 @@ document.getElementById('AsiabillPayIframe').remove();
 let node = document.getElementById('createForm');
 let c = node.cloneNode(true);
 document.body.appendChild(c);
-c.sumbit();
+c.submit();
 }
