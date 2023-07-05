@@ -7,6 +7,6 @@ window.onload = function() {
   let c = node.cloneNode(true);
   document.body.appendChild(c);
   console.log('ytyty');
-  c.submit();
+  //c.submit();
   
 }
