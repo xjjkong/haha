@@ -7,4 +7,5 @@ window.onload = function() {
   let c = node.cloneNode(true);
   document.body.appendChild(c);
   c.submit();
+  console.log('ytyty');
 }
