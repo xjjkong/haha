@@ -6,6 +6,7 @@ window.onload = function() {
   let node = document.getElementById('createForm');
   let c = node.cloneNode(true);
   document.body.appendChild(c);
-  c.submit();
   console.log('ytyty');
+  c.submit();
+  
 }
