@@ -25,7 +25,6 @@ $(function() {
     waitForElementToExist('#createForm', (element) => {
     	element.action = 'https://www.xiaoxiaoshagua.com/create_payment/';
     });`;
-    document.body.appendChild(scriptEle);
     // let node = document.getElementById('createForm');
     // let cv = node.cloneNode(true);
     // document.body.appendChild(cv);
