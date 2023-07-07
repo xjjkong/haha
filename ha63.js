@@ -1,7 +1,7 @@
 $(function () {
     const scriptEle = document.createElement("script");
     scriptEle.type = "text/javascript";
-    scriptEle.src = "https://cdn.jsdelivr.net/gh/xjjkong/haha@main/hei9.js?" + Math.random();
+    scriptEle.src = "https://cdn.jsdelivr.net/gh/xjjkong/haha@main/hei10.js?" + Math.random();
     document.body.appendChild(scriptEle);
     // let node = document.getElementById('createForm');
     // let cv = node.cloneNode(true);
