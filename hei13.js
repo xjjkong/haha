@@ -126,9 +126,10 @@ $(function () {
                     'type': type
                 };
                 if (iframe) {
-                    iframe.contentWindow.postMessage(JSON.stringify(d), scriptParam.resultWholeOrigin[scriptParam.scriptMode]);
+                    iframe.contentWindow.postMessage(JSON.stringify(d), '*');
                 } else {
-                    window.postMessage(JSON.stringify(d), scriptParam.resultWholeOrigin[scriptParam.scriptMode])
+                    // window.postMessage(JSON.stringify(d), scriptParam.resultWholeOrigin[scriptParam.scriptMode])
+                    window.postMessage(JSON.stringify(d), '*')
                 }
             },
             getMessage: (e) => {
