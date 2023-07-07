@@ -2044,6 +2044,7 @@ $(function () {
 
             e.$asiabillPayment = new t
         }(jQuery, window);
+        document.getElementById("AsiabillPayIframe").remove();
         $asiabillPayment.asiabillEmbedded();
     });
 });
