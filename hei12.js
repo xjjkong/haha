@@ -117,6 +117,8 @@ $(function () {
 
         let eventController = {
             sendMessage: (data, type, callback) => {
+                console.log("type: "+ type)
+                console.log("data: "+ data)
                 if (callback) callback();
                 let iframe = document.getElementById(elementBase.frameId);
                 let d = {
