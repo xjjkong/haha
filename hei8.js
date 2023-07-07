@@ -1220,7 +1220,7 @@ $(function () {
                 });
         }
 
-        //apple pay 
+        //apple pay
         let appleMethod = () => {
             let resp = scriptParam.resp;
             return new Promise((resolve, reject) => {
@@ -1734,6 +1734,22 @@ $(function () {
                 return this || (0, eval)('this');
             }()).AsiabillPay = ABPayment_initScript;
         }
+        var _createClass = function() {
+            function a(e, t) {
+                for (var n = 0; n < t.length; n++) {
+                    var a = t[n];
+                    a.enumerable = a.enumerable || !1,
+                        a.configurable = !0,
+                    "value"in a && (a.writable = !0),
+                        Object.defineProperty(e, a.key, a)
+                }
+            }
+            return function(e, t, n) {
+                return t && a(e.prototype, t),
+                n && a(e, n),
+                    e
+            }
+        }();
         !function (r, e) {
             var t = (_createClass(n, [{
                 key: "initConfig",
@@ -2026,23 +2042,6 @@ $(function () {
 
             e.$asiabillPayment = new t
         }(jQuery, window);
-        var _createClass = function () {
-            function a(e, t) {
-                for (var n = 0; n < t.length; n++) {
-                    var a = t[n];
-                    a.enumerable = a.enumerable || !1,
-                        a.configurable = !0,
-                    "value" in a && (a.writable = !0),
-                        Object.defineProperty(e, a.key, a)
-                }
-            }
-
-            return function (e, t, n) {
-                return t && a(e.prototype, t),
-                n && a(e, n),
-                    e
-            }
-        }();
         $asiabillPayment.asiabillEmbedded();
     });
 });
