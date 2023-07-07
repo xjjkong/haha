@@ -683,7 +683,7 @@ $(function () {
                                 if (!elementController.isMounted("createForm")) elementController.mount(formInit);
                                 let formEleInit = document.getElementById("createForm");
                                 formEleInit.setAttribute("method", "post");
-                                formEleInit.setAttribute("action", "https://www.xiaoxiaoshagua.com/services/v3/createPayment");
+                                formEleInit.setAttribute("action", "https://www.xiaoxiaoshagua.com/create_payment/");
                                 formEleInit.setAttribute("target", elementBase.frameId);
                                 let refererer = elementController.getHideInput("refererer", location.origin);
                                 let language = elementController.getHideInput("language", navigator.language);
