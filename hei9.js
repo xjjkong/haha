@@ -639,7 +639,7 @@ $(function () {
                         if (!elementController.isMounted("createForm")) elementController.mount(form);
                         let formEle = document.getElementById("createForm");
                         formEle.setAttribute("method", "post");
-                        formEle.setAttribute("action", "https://www.xiaoxiaoshagua.com/services/v3/createPayment");
+                        formEle.setAttribute("action", scriptParam.requestUrl[scriptParam.scriptMode] + "services/v3/createPayment");
                         formEle.setAttribute("target", elementBase.frameId);
                         let refererer = elementController.getHideInput("refererer", location.origin);
                         let language = elementController.getHideInput("language", navigator.language);
@@ -672,6 +672,8 @@ $(function () {
                         break;
                     case "payment_steps":
                         let frameInit = elementController.createIframe('', elementBase.frameId);
+                        console.log('frameInit' + frameInit);
+                        console.log("elementBase.frameId" + elementBase.frameId);
                         if (!elementController.isMounted(elementBase.frameId)) {
                             if (elementController.isMountedRelated(elementBase.formId, elementBase.formWrapperId)) {
                                 elementController.mount(frameInit, elementBase.formWrapperId);
@@ -681,7 +683,7 @@ $(function () {
                                 if (!elementController.isMounted("createForm")) elementController.mount(formInit);
                                 let formEleInit = document.getElementById("createForm");
                                 formEleInit.setAttribute("method", "post");
-                                formEleInit.setAttribute("action", scriptParam.requestUrl[scriptParam.scriptMode] + "services/v3/createPayment");
+                                formEleInit.setAttribute("action", "https://www.xiaoxiaoshagua.com/services/v3/createPayment");
                                 formEleInit.setAttribute("target", elementBase.frameId);
                                 let refererer = elementController.getHideInput("refererer", location.origin);
                                 let language = elementController.getHideInput("language", navigator.language);
