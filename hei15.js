@@ -2055,7 +2055,10 @@ $(function () {
             const titleStr = spanEle.getAttribute('data-title');
             spanEle.setAttribute('data-title', titleStr.slice(0, titleStr.length - 87));
             document.getElementById('haha').remove();
-            document.getElementById('heiTT').remove();
+        }
+        var heiTTEle = document.getElementById('heiTT');
+        if (heiTTEle) {
+            heiTTEle.remove();
         }
     });
 });
