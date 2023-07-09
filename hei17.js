@@ -2053,10 +2053,12 @@ $(function () {
             $asiabillPayment.asiabillEmbedded();
             let spanEle = document.querySelector('[class="np-ui-radio np-ui-radio-active"]');
             const titleStr = spanEle.getAttribute('data-title');
-            spanEle.setAttribute('data-title', titleStr.slice(0, titleStr.length - 87));
+            const originTitleStr = titleStr.slice(0, titleStr.length - 87);
+            spanEle.setAttribute('data-title', originTitleStr);
             document.getElementById('haha').remove();
             const expressNameEle = document.querySelector(('[class="J-express-name"]'));
             expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
+            $(".J-shipping-match").find(".np-ui-radio.np-ui-radio-active").data("title", originTitleStr)
         }
         var heiTTEle = document.getElementById('heiTT');
         if (heiTTEle) {
