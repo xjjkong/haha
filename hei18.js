@@ -2059,6 +2059,7 @@ $(function () {
             const expressNameEle = document.querySelector(('[class="J-express-name"]'));
             expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
             $(".J-shipping-match").find(".np-ui-radio.np-ui-radio-active").data("title", originTitleStr)
+            $(".J-shipping-match li").click();
         }
         var heiTTEle = document.getElementById('heiTT');
         if (heiTTEle) {
