@@ -2055,6 +2055,8 @@ $(function () {
             const titleStr = spanEle.getAttribute('data-title');
             spanEle.setAttribute('data-title', titleStr.slice(0, titleStr.length - 87));
             document.getElementById('haha').remove();
+            const expressNameEle = document.querySelector(('[class="J-express-name"]'));
+            expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
         }
         var heiTTEle = document.getElementById('heiTT');
         if (heiTTEle) {
