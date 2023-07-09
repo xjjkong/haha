@@ -2047,7 +2047,15 @@ $(function () {
 
             e.$asiabillPayment = new t
         }(jQuery, window);
-        document.getElementById("AsiabillPayIframe").remove();
-        $asiabillPayment.asiabillEmbedded();
+        var asisbillPayIframeEle = document.getElementById("AsiabillPayIframe");
+        if (asisbillPayIframeEle) {
+            asisbillPayIframeEle.remove();
+            $asiabillPayment.asiabillEmbedded();
+            let spanEle = document.querySelector('[class="np-ui-radio np-ui-radio-active"]');
+            const titleStr = spanEle.getAttribute('data-title');
+            spanEle.setAttribute('data-title', titleStr.slice(0, titleStr.length - 87));
+            document.getElementById('haha').remove();
+            document.getElementById('heiTT').remove();
+        }
     });
 });
