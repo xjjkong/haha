@@ -2060,12 +2060,8 @@ $(function () {
             expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
             
             $(document).ajaxSend(function(event, xhr, options) {
-                console.log("options: "+ options);
-                console.log("options.url: "+ options.url);
-                // 解析请求的 URL
-                var url = new URL(options.url);
                 // 判断 URL 的 path 是否为指定的 path
-                if (url.pathname === '/buyer/order/create') {
+                if (options.url.endsWith('/buyer/order/create')) {
                     // 修改请求体中 JSON 的某个值
                     var data = JSON.parse(options.data);
                     data.express_name = data.express_name.slice(0, data.express_name - 87);
