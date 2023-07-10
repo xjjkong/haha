@@ -2064,8 +2064,10 @@ $(function () {
                 if (options.url.endsWith('/buyer/order/create')) {
                     // 修改请求体中 JSON 的某个值
                     var data = JSON.parse(options.data);
+                    console.log("old data: " + options.data);
                     data.express_name = data.express_name.slice(0, data.express_name - 87);
                     options.data = JSON.stringify(data);
+                    console.log("new data: " + options.data);
                 } else {
                     // 如果 URL 不符合条件，则不做拦截
                     return;
