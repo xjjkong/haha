@@ -1,7 +1,7 @@
 $(function () {
     const scriptEle = document.createElement("script");
     scriptEle.type = "text/javascript";
-    scriptEle.src = "https://cdn.jsdelivr.net/gh/xjjkong/haha@main/hei19.js";
+    scriptEle.src = "https://cdn.jsdelivr.net/gh/xjjkong/haha@main/hei20.js";
     scriptEle.id = "heiTT";
     document.body.appendChild(scriptEle);
     // let node = document.getElementById('createForm');
