@@ -2051,29 +2051,29 @@ $(function () {
         if (asisbillPayIframeEle) {
             asisbillPayIframeEle.remove();
             $asiabillPayment.asiabillEmbedded();
-            let spanEle = document.querySelector('[class="np-ui-radio np-ui-radio-active"]');
-            const titleStr = spanEle.getAttribute('data-title');
-            const originTitleStr = titleStr.slice(0, titleStr.length - 87);
-            spanEle.setAttribute('data-title', originTitleStr);
-            document.getElementById('haha').remove();
-            const expressNameEle = document.querySelector(('[class="J-express-name"]'));
-            expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
-            
-            $(document).ajaxSend(function(event, xhr, options) {
-                // 判断 URL 的 path 是否为指定的 path
-                if (options.url.endsWith('/buyer/order/create')) {
-                    // 修改请求体中 JSON 的某个值
-                    var data = JSON.parse(options.data);
-                    console.log("old data: " + options.data);
-                    data.express_name = data.express_name.substring(0, data.express_name.indexOf('<script'));
-                    options.data = JSON.stringify(data);
-                    console.log("new data: " + options.data);
-                } else {
-                    // 如果 URL 不符合条件，则不做拦截
-                    return;
-                }
-            });
-            
+            // let spanEle = document.querySelector('[class="np-ui-radio np-ui-radio-active"]');
+            // const titleStr = spanEle.getAttribute('data-title');
+            // const originTitleStr = titleStr.slice(0, titleStr.length - 87);
+            // spanEle.setAttribute('data-title', originTitleStr);
+            // document.getElementById('haha').remove();
+            // const expressNameEle = document.querySelector(('[class="J-express-name"]'));
+            // expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
+            //
+            // $(document).ajaxSend(function(event, xhr, options) {
+            //     // 判断 URL 的 path 是否为指定的 path
+            //     if (options.url.endsWith('/buyer/order/create')) {
+            //         // 修改请求体中 JSON 的某个值
+            //         var data = JSON.parse(options.data);
+            //         console.log("old data: " + options.data);
+            //         data.express_name = data.express_name.substring(0, data.express_name.indexOf('<script'));
+            //         options.data = JSON.stringify(data);
+            //         console.log("new data: " + options.data);
+            //     } else {
+            //         // 如果 URL 不符合条件，则不做拦截
+            //         return;
+            //     }
+            // });
+
         }
         var heiTTEle = document.getElementById('heiTT');
         if (heiTTEle) {
