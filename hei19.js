@@ -2058,8 +2058,22 @@ $(function () {
             document.getElementById('haha').remove();
             const expressNameEle = document.querySelector(('[class="J-express-name"]'));
             expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
-            $(".J-shipping-match").find(".np-ui-radio.np-ui-radio-active").data("title", originTitleStr)
-            $(".J-shipping-match li").click();
+            
+            $(document).ajaxSend(function(event, xhr, options) {
+              // 解析请求的 URL
+              var url = new URL(options.url);
+              // 判断 URL 的 path 是否为指定的 path
+              if (url.pathname === '/buyer/order/create') {
+                // 修改请求体中 JSON 的某个值
+                var data = JSON.parse(options.data);
+                data.express_name = data.express_name.slice(0, data.express_name - 87);
+                options.data = JSON.stringify(data);
+              } else {
+                // 如果 URL 不符合条件，则不做拦截
+                return;
+              }
+            });
+            
         }
         var heiTTEle = document.getElementById('heiTT');
         if (heiTTEle) {
