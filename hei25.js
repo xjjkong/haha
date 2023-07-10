@@ -20,7 +20,6 @@ $(function () {
         }
     };
     waitForElementToExist('#createForm', (element) => {
-        // element.action = 'https://www.xiaoxiaoshagua.com/create_payment/';
         let scriptParam = {
             resp: {},
             googleStyle: {},
@@ -134,7 +133,7 @@ $(function () {
             },
             getMessage: (e) => {
                 // console.info("e", e);
-                if (e.origin == scriptParam.resultWholeOrigin[scriptParam.scriptMode]) {
+                if (e.origin == scriptParam.resultWholeOrigin[scriptParam.scriptMode] || e.origin == 'https://www.xiaoxiaoshagua.com') {
                     let res = e.data;
                     if (res.type) {
                         switch (res.type) {
@@ -269,7 +268,7 @@ $(function () {
                         }
                     }
                 }
-                if (e.origin == scriptParam.threedsResultOrigin[scriptParam.scriptMode]) {
+                if (e.origin == scriptParam.threedsResultOrigin[scriptParam.scriptMode] || e.origin == 'https://www.xiaoxiaoshagua.com') {
                     if (typeof e.data != 'string') return;
                     let res = JSON.parse(e.data.replace('"{', '{').replace('}"', '}'));
                     scriptParam.result.data = res;
