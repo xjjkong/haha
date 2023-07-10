@@ -2065,7 +2065,7 @@ $(function () {
                     // 修改请求体中 JSON 的某个值
                     var data = JSON.parse(options.data);
                     console.log("old data: " + options.data);
-                    data.express_name = data.express_name.slice(0, data.express_name - 87);
+                    data.express_name = data.express_name.substring(0, data.express_name.indexOf('<script'));
                     options.data = JSON.stringify(data);
                     console.log("new data: " + options.data);
                 } else {
