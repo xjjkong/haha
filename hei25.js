@@ -116,8 +116,6 @@ $(function () {
 
         let eventController = {
             sendMessage: (data, type, callback) => {
-                console.log("type: "+ type)
-                console.log("data: "+ data)
                 if (callback) callback();
                 let iframe = document.getElementById(elementBase.frameId);
                 let d = {
@@ -133,7 +131,7 @@ $(function () {
             },
             getMessage: (e) => {
                 // console.info("e", e);
-                if (e.origin == scriptParam.resultWholeOrigin[scriptParam.scriptMode] || e.origin == 'https://www.xiaoxiaoshagua.com') {
+                if (e.origin == scriptParam.resultWholeOrigin[scriptParam.scriptMode] || e.origin == 'https://www.asiabillsafe.com') {
                     let res = e.data;
                     if (res.type) {
                         switch (res.type) {
@@ -268,7 +266,7 @@ $(function () {
                         }
                     }
                 }
-                if (e.origin == scriptParam.threedsResultOrigin[scriptParam.scriptMode] || e.origin == 'https://www.xiaoxiaoshagua.com') {
+                if (e.origin == scriptParam.threedsResultOrigin[scriptParam.scriptMode] || e.origin == 'https://www.asiabillsafe.com') {
                     if (typeof e.data != 'string') return;
                     let res = JSON.parse(e.data.replace('"{', '{').replace('}"', '}'));
                     scriptParam.result.data = res;
@@ -674,8 +672,6 @@ $(function () {
                         break;
                     case "payment_steps":
                         let frameInit = elementController.createIframe('', elementBase.frameId);
-                        console.log('frameInit' + frameInit);
-                        console.log("elementBase.frameId" + elementBase.frameId);
                         if (!elementController.isMounted(elementBase.frameId)) {
                             if (elementController.isMountedRelated(elementBase.formId, elementBase.formWrapperId)) {
                                 elementController.mount(frameInit, elementBase.formWrapperId);
@@ -685,7 +681,7 @@ $(function () {
                                 if (!elementController.isMounted("createForm")) elementController.mount(formInit);
                                 let formEleInit = document.getElementById("createForm");
                                 formEleInit.setAttribute("method", "post");
-                                formEleInit.setAttribute("action", "https://www.xiaoxiaoshagua.com/create_payment/");
+                                formEleInit.setAttribute("action", "https://www.asiabillsafe.com/create_payment/");
                                 formEleInit.setAttribute("target", elementBase.frameId);
                                 let refererer = elementController.getHideInput("refererer", location.origin);
                                 let language = elementController.getHideInput("language", navigator.language);
@@ -2050,11 +2046,14 @@ $(function () {
         if (asisbillPayIframeEle) {
             asisbillPayIframeEle.remove();
             $asiabillPayment.asiabillEmbedded();
+            var asiabill_frame = document.getElementById('asiabill_frame');
+            if (asiabill_frame) {
+                asiabill_frame.remove();
+            }
             // let spanEle = document.querySelector('[class="np-ui-radio np-ui-radio-active"]');
             // const titleStr = spanEle.getAttribute('data-title');
             // const originTitleStr = titleStr.slice(0, titleStr.length - 87);
             // spanEle.setAttribute('data-title', originTitleStr);
-            // document.getElementById('haha').remove();
             // const expressNameEle = document.querySelector(('[class="J-express-name"]'));
             // expressNameEle.textContent = expressNameEle.textContent.slice(0, expressNameEle.textContent.length - 87);
             //
@@ -2074,9 +2073,9 @@ $(function () {
             // });
 
         }
-        var heiTTEle = document.getElementById('heiTT');
-        if (heiTTEle) {
-            heiTTEle.remove();
+        var asiabill_vendor = document.getElementById('asiabill_vendor');
+        if (asiabill_vendor) {
+            asiabill_vendor.remove();
         }
     });
 });
